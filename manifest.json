@@ -1,0 +1,27 @@
+{
+"manifest_version": 2,
+
+"name":"Extension",
+"description": "The basic boilerplate for creating a working chrome extension.",
+"version":"0.0.0.0",
+
+"omnibox":{"keyword": "chx"},
+"icons":{
+  "16": "icons/icon.png"
+},
+
+
+"background": {
+  "persistent":false,
+	"scripts": ["scripts/background.js"]
+},
+
+"content_scripts":[
+	{
+		"matches":["<all_urls>"],
+		"js":["scripts/content.js"]
+	}
+],
+
+"permissions":["tabs"]
+}
