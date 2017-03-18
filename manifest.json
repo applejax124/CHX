@@ -1,7 +1,7 @@
 {
 "manifest_version": 2,
 
-"name":"Extension",
+"name":"ChromExpression",
 "description": "The basic boilerplate for creating a working chrome extension.",
 "version":"0.0.0.0",
 
