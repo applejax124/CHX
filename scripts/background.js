@@ -14,6 +14,8 @@ function parse( str ){
   switch ( args.shift() ){
     case "google":
       google_search(args);
+    default:
+      alert("ERROR: command not found");
   }
   
 }
