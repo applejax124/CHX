@@ -47,10 +47,17 @@ function bookmark_utility( params ){
 // IF PARAM: list the bookmark tree under that parameter
 // IF NOT PARAM: list bookmark tree of entire hierarchy
 function bu_list(params){
-  var outStr="";
-
-  if (params.len > 0){
-    //TODO: hunt for a folder and list it
+  if (params.length > 0){
+    for (i in params){
+      chrome.bookmarks.getTree(function(result){
+        stdOut=params[i]+"\n";
+        for(c in result[0].children){
+          tree_delve(result[0].children[c],params[i].split("\\"));
+        }
+        alert(stdOut);
+        stdOut="";
+      });
+    }
   } else {
     chrome.bookmarks.getTree(function(result){
       stdOut="";
@@ -62,6 +69,30 @@ function bu_list(params){
       alert(stdOut);
       stdOut="";
     });
+  }
+}
+//Recursively go through a series of given parameters
+function tree_delve(folder,params){
+  console.log(folder);
+  console.log(params);
+  dir=params.shift();
+  console.log(dir);
+  //if this was the end of path, list everythin
+  // else continue delving
+  if( params.length > 0 ){
+    for(c in folder.children){
+      if(folder.children[c].title == dir){
+        tree_delve(folder.children[c],params);
+      }
+    }
+  } else {
+    for(c in folder.children){
+      if(folder.children[c].title == dir){
+        for(l in folder.children[c].children){
+          stdOut+="-|"+folder.children[c].children[l].title+"\n";
+        }
+      }
+    }
   }
 }
 //recursive look into bookmark object tree
