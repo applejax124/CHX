@@ -1,3 +1,6 @@
+//Shared output for recursive functions/code
+var stdOut="";
+
 //Read omnibox input to parser
 chrome.omnibox.onInputEntered.addListener( function(text){
   parse(text);
@@ -14,10 +17,76 @@ function parse( str ){
   switch ( args.shift() ){
     case "google":
       google_search(args);
+      break;
+    case "bkmrk":
+      bookmark_utility(args);
+      break;
     default:
       alert("ERROR: command not found");
   }
   
+}
+
+//function that handles bookmark-related commands
+//just reads command details and calls the next operation
+//INPUT:
+//   params - an array of parameters
+function bookmark_utility( params ){
+  switch ( params.shift() ){
+    case "add":
+      bu_add(params);
+      break;
+    case "list":
+      bu_list(params);
+      break;
+  }
+}
+
+//List the bookmark tree
+// Takes at most one parameter
+// IF PARAM: list the bookmark tree under that parameter
+// IF NOT PARAM: list bookmark tree of entire hierarchy
+function bu_list(params){
+  var outStr="";
+
+  if (params.len > 0){
+    //TODO: hunt for a folder and list it
+  } else {
+    chrome.bookmarks.getTree(function(result){
+      stdOut="";
+      stdOut+="All Bookmarks\n";
+      for(c in result[0].children){
+        ls(result[0].children[c],1,stdOut);
+      }
+      //When we're done, print string
+      alert(stdOut);
+      stdOut="";
+    });
+  }
+}
+//recursive look into bookmark object tree
+function ls(node, tabOrder, output){
+  for(var i=0; i<tabOrder; ++i){
+   stdOut+="-|"; 
+  }
+  stdOut += node.title;
+  stdOut += "\n";
+  for(c in node.children){
+    ls(node.children[c],tabOrder+1,output);
+  }
+}
+//Add a bookmark in a given area
+// IF PARAM: then insert it in the hierarchy under param
+// IF NOT PARAM: insert in bookmarks bar
+function bu_add( params ){
+  chrome.bookmarks.getTree(function(result){
+    console.log(result);
+  });
+  if ( params.length === 0 ){
+    
+  } else {
+
+  }
 }
 
 //function to launch a google search
