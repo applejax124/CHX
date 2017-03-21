@@ -18,6 +18,8 @@ function parse( str ){
     case "google":
       google_search(args);
       break;
+    case "youtube":
+      youtube_search(args);
     case "bkmrk":
       bookmark_utility(args);
       break;
@@ -106,19 +108,39 @@ function ls(node, tabOrder, output){
     ls(node.children[c],tabOrder+1,output);
   }
 }
+
+//Find the id of a folder/file
+function find(term){
+  stdOut=-1
+  chrome.bookmarks.getTree(function(result){
+    re_find(term, result[0]);
+  });
+  
+}
+//recursive element of find function
+function re_find(term, node){
+  for(c in node.children){
+    if(node.children[c].title == term){
+      stdOut = node.children[c].id;
+    } else{
+      re_find(term, node.children[c]);
+    }
+  }
+}
+
 //Add a bookmark in a given area
 // IF PARAM: then insert it in the hierarchy under param
 // IF NOT PARAM: insert in bookmarks bar
 function bu_add( params ){
-  chrome.bookmarks.getTree(function(result){
-    console.log(result);
-  });
   if ( params.length === 0 ){
     
   } else {
-
+    
   }
 }
+
+
+
 
 //function to launch a google search
 //INPUT: 
@@ -131,6 +153,16 @@ function google_search( params ){
   url += '\b';
   navigate(url);
 }
+//function to access youtube search
+function youtube_search( params ){
+  url="https://www.youtube.com/results?search_query=";
+  for (i in params){
+    url += params[i]+"+";
+  }
+  url += '\b';
+  navigate(url);
+}
+
 //function to change chrome's browser to specified window
 function navigate( loc ){
   //sets current tab url to loc
