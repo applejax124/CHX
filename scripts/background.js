@@ -14,19 +14,18 @@ chrome.omnibox.onInputEntered.addListener( function(text){
 //  NONE - commands are executed in their own way
 function parse( str ){
   args = str.split(" ");
-  switch ( args.shift() ){
-    case "google":
-      google_search(args);
-      break;
-    case "youtube":
-      youtube_search(args);
-    case "bkmrk":
-      bookmark_utility(args);
-      break;
-    default:
-      alert("ERROR: command not found");
+  //Command always comes first
+  com = args.shift();
+  if ( isGoogleCommand(com) ){
+    google_search(args);
+  } else if (isYoutubeCommand(com)) {
+    youtube_search(args);
+  } else if (isBookmarkUtility(com) ){
+    bookmark_utility(args);
+  } else{
+    alert("ERROR: command not found");
   }
-  
+
 }
 
 //function that handles bookmark-related commands
@@ -167,4 +166,36 @@ function youtube_search( params ){
 function navigate( loc ){
   //sets current tab url to loc
   chrome.tabs.update({"url":loc});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function isGoogleCommand(com){
+  if (com == 'google'){
+    return true;
+  }
+  return false;
+}
+
+function isYoutubeCommand(com){
+  if (com == 'youtube'){
+    return true;
+  }
+  return false;
+}
+
+function isBookmarkUtility(com){
+  if (com == 'bkmrk'){
+    return true;
+  }
+  return false;
 }
