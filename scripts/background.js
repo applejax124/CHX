@@ -22,7 +22,9 @@ function parse( str ){
     youtube_search(args);
   } else if (isBookmarkUtility(com) ){
     bookmark_utility(args);
-  } else{
+  } else if ( isExtensionPage(com) ){
+    extensions_load();
+  } else {
     alert("ERROR: command not found");
   }
 
@@ -40,6 +42,8 @@ function bookmark_utility( params ){
     case "list":
       bu_list(params);
       break;
+    default:
+      navigate("chrome://bookmarks");
   }
 }
 
@@ -162,6 +166,12 @@ function youtube_search( params ){
   navigate(url);
 }
 
+//function for extension page access
+function extensions_load(){
+  url="chrome://extensions";
+  navigate(url);
+}
+
 //function to change chrome's browser to specified window
 function navigate( loc ){
   //sets current tab url to loc
@@ -199,3 +209,14 @@ function isBookmarkUtility(com){
   }
   return false;
 }
+
+function isExtensionsPage(){
+  if (comm == 'extensions'){
+    return true;
+  }
+  return false;
+}
+
+
+
+
