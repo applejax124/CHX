@@ -22,9 +22,21 @@ function parse( str ){
     youtube_search(args);
   } else if (isBookmarkUtility(com) ){
     bookmark_utility(args);
-  } else if ( isExtensionPage(com) ){
+  } else if ( isExtensionsPage(com) ){
     extensions_load();
-  } else {
+  } else if( isDriveApp(com) ){
+		if ( len(args)>0 ){
+			navigate( "https://drive.google.com/drive/u/"+args[0]+"/" );
+		} else {
+			navigate( "https://drive.google.com/drive/u/0/" );
+		}
+  } else if( isMailApp(com) ){
+		if ( len(args)>0 ){
+			navigate( "https://mail.google.com/mail/u/"+args[0]+"/" );
+		}	else {
+			navigate( "https://mail.google.com/mail/u/0/" );
+		}
+	} else {
     alert("ERROR: command not found");
   }
 
@@ -210,13 +222,25 @@ function isBookmarkUtility(com){
   return false;
 }
 
-function isExtensionsPage(){
-  if (comm == 'extensions'){
+function isExtensionsPage(com){
+  if (com == 'extensions'){
     return true;
   }
   return false;
 }
 
+function isDriveApp(com){
+	if (com == 'drive'){
+		return true;
+	}
+	return false;
+}
 
+function isMailApp(com){
+	if (com == 'mail'){
+		return true;
+	}
+	return false;
+}
 
 
