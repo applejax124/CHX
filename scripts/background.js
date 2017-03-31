@@ -25,13 +25,13 @@ function parse( str ){
   } else if ( isExtensionsPage(com) ){
     extensions_load();
   } else if( isDriveApp(com) ){
-		if ( len(args)>0 ){
+		if ( args.length>0 ){
 			navigate( "https://drive.google.com/drive/u/"+args[0]+"/" );
 		} else {
 			navigate( "https://drive.google.com/drive/u/0/" );
 		}
   } else if( isMailApp(com) ){
-		if ( len(args)>0 ){
+		if ( args.length>0 ){
 			navigate( "https://mail.google.com/mail/u/"+args[0]+"/" );
 		}	else {
 			navigate( "https://mail.google.com/mail/u/0/" );
