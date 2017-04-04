@@ -36,7 +36,9 @@ function parse( str ){
 		}	else {
 			navigate( "https://mail.google.com/mail/u/0/" );
 		}
-	} else {
+	} else if( isWikiApp(com) ) {
+      wikipedia_search(args);
+  } else {
     alert("ERROR: command not found");
   }
 
@@ -154,7 +156,17 @@ function bu_add( params ){
   }
 }
 
-
+//function to navigate to a wikipedia search
+//INPUT:
+//  params - an array or search terms
+function wikipedia_search( params ){
+  url="https://en.wikipedia.org/wiki/Special:Search?search=";
+  for (i in params){
+    url += params[i]+"+";
+  }
+  url += '\b';
+  navigate(url);
+}
 
 
 //function to launch a google search
@@ -243,4 +255,9 @@ function isMailApp(com){
 	return false;
 }
 
-
+function isWikiApp(com){
+  if (com == 'wiki'){
+    return true;
+  }
+  return false;
+}
