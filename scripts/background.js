@@ -22,6 +22,8 @@ function parse( str ){
     youtube_search(args);
   } else if (isBookmarkUtility(com) ){
     bookmark_utility(args);
+  } else if ( isSettingsPage(com) ){
+    settings_load();
   } else if ( isExtensionsPage(com) ){
     extensions_load();
   } else if( isDriveApp(com) ){
@@ -190,6 +192,13 @@ function youtube_search( params ){
   navigate(url);
 }
 
+//function for settings page access
+function settings_load(){
+  url="chrome://settings";
+  navigate( url );
+}
+
+
 //function for extension page access
 function extensions_load(){
   url="chrome://extensions";
@@ -236,6 +245,13 @@ function isBookmarkUtility(com){
 
 function isExtensionsPage(com){
   if (com == 'extensions'){
+    return true;
+  }
+  return false;
+}
+
+function isSettingsPage(com){
+  if(com == 'settings'){
     return true;
   }
   return false;
