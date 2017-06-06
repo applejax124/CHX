@@ -4,7 +4,7 @@
 * 06 - 05 - 2017
 */
 
-addModule();
+addModule(isGoogleCommand, google_search);
 
 // verifies google search command
 function isGoogleCommand(command){
