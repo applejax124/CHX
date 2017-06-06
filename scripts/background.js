@@ -63,7 +63,6 @@ addModule(isExtensionsPage, extensions_load);
 
 //addModule(isDriveApp,);
 //addModule(isMailApp,);
-addModule(isWikiApp, wikipedia_search);
 /*
   } else if( isDriveApp(com) ){
 		if ( args.length>0 ){
@@ -191,19 +190,6 @@ function bu_add( params ){
     
   }
 }
-
-//function to navigate to a wikipedia search
-//INPUT:
-//  params - an array or search terms
-function wikipedia_search( params ){
-  url="https://en.wikipedia.org/wiki/Special:Search?search=";
-  for (i in params){
-    url += params[i]+"+";
-  }
-  url += '\b';
-  navigate(url);
-}
-
 
 //function to launch a google search
 //INPUT: 
