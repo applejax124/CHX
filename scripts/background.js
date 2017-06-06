@@ -51,15 +51,8 @@ function parse( str ){
 
 
 
-//addModule(isDriveApp,);
 //addModule(isMailApp,);
 /*
-  } else if( isDriveApp(com) ){
-		if ( args.length>0 ){
-			navigate( "https://drive.google.com/drive/u/"+args[0]+"/" );
-		} else {
-			navigate( "https://drive.google.com/drive/u/0/" );
-		}
   } else if( isMailApp(com) ){
 		if ( args.length>0 ){
 			navigate( "https://mail.google.com/mail/u/"+args[0]+"/" );
