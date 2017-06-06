@@ -16,7 +16,8 @@
 	"scripts": [
     "scripts/background.js", 
     "scripts/youtube.js",
-    "scripts/modules/wikipedia.js"
+    "scripts/modules/wikipedia.js",
+    "scripts/modules/chrome/chrome_settings.js"
   ]
 },
 

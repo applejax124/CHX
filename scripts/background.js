@@ -48,17 +48,9 @@ function parse( str ){
   alert("ERROR. Command not found.");
 }
 
-function check_test(){
-  return true;
-}
-
-function test(){
-  alert("Command Executing");
-}
 
 addModule(isGoogleCommand, google_search);
 
-addModule(isSettingsPage, settings_load);
 addModule(isExtensionsPage, extensions_load);
 
 //addModule(isDriveApp,);
@@ -180,16 +172,6 @@ function re_find(term, node){
   }
 }
 
-//Add a bookmark in a given area
-// IF PARAM: then insert it in the hierarchy under param
-// IF NOT PARAM: insert in bookmarks bar
-function bu_add( params ){
-  if ( params.length === 0 ){
-    
-  } else {
-    
-  }
-}
 
 //function to launch a google search
 //INPUT: 
@@ -203,11 +185,6 @@ function google_search( params ){
   navigate(url);
 }
 
-//function for settings page access
-function settings_load(){
-  url="chrome://settings";
-  navigate( url );
-}
 
 
 //function for extension page access
@@ -255,12 +232,6 @@ function isExtensionsPage(com){
   return false;
 }
 
-function isSettingsPage(com){
-  if(com == 'settings'){
-    return true;
-  }
-  return false;
-}
 
 function isDriveApp(com){
 	if (com == 'drive'){
