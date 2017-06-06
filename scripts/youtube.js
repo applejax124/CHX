@@ -20,4 +20,4 @@ function youtube_search( params ){
   navigate(url);
 }
 
-addModule(isYoutubeCommand, youtube_search);
+addModule(isYouTubeCommand, youtube_search);
