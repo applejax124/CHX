@@ -51,7 +51,6 @@ function parse( str ){
 
 addModule(isGoogleCommand, google_search);
 
-addModule(isExtensionsPage, extensions_load);
 
 //addModule(isDriveApp,);
 //addModule(isMailApp,);
@@ -187,12 +186,6 @@ function google_search( params ){
 
 
 
-//function for extension page access
-function extensions_load(){
-  url="chrome://extensions";
-  navigate(url);
-}
-
 //function to change chrome's browser to specified window
 function navigate( loc ){
   //sets current tab url to loc
@@ -220,13 +213,6 @@ function isGoogleCommand(com){
 
 function isBookmarkUtility(com){
   if (com == 'bkmrk'){
-    return true;
-  }
-  return false;
-}
-
-function isExtensionsPage(com){
-  if (com == 'extensions'){
     return true;
   }
   return false;
