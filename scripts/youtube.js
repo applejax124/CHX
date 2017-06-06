@@ -4,7 +4,6 @@
 * 06 - 05 - 2017
 */
 
-addModule(isYoutubeCommand, youtube_search);
 
 // function to validate youtube detail
 function isYouTubeCommand( command ){
@@ -20,3 +19,5 @@ function youtube_search( params ){
   url += '\b';
   navigate(url);
 }
+
+addModule(isYoutubeCommand, youtube_search);
