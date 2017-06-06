@@ -57,7 +57,6 @@ function test(){
 }
 
 addModule(isGoogleCommand, google_search);
-addModule(isYoutubeCommand, youtube_search);
 
 addModule(isSettingsPage, settings_load);
 addModule(isExtensionsPage, extensions_load);
