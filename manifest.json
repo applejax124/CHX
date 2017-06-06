@@ -15,6 +15,7 @@
   "persistent":false,
 	"scripts": [
     "scripts/background.js", 
+    "scripts/modules/mail/gmail.js",
     "scripts/youtube.js",
     "scripts/modules/drive.js",
     "scripts/modules/wikipedia.js",

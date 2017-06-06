@@ -49,19 +49,8 @@ function parse( str ){
 }
 
 
-
-
-//addModule(isMailApp,);
-/*
-  } else if( isMailApp(com) ){
-		if ( args.length>0 ){
-			navigate( "https://mail.google.com/mail/u/"+args[0]+"/" );
-		}	else {
-			navigate( "https://mail.google.com/mail/u/0/" );
-		}
-  }
-*/
-
+// UTILITY FUNCTIONS //////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 //function to change chrome's browser to specified window
 function navigate( loc ){
@@ -72,41 +61,3 @@ function navigate( loc ){
 
 
 
-
-
-
-
-
-
-
-
-
-
-function isBookmarkUtility(com){
-  if (com == 'bkmrk'){
-    return true;
-  }
-  return false;
-}
-
-
-function isDriveApp(com){
-	if (com == 'drive'){
-		return true;
-	}
-	return false;
-}
-
-function isMailApp(com){
-	if (com == 'mail'){
-		return true;
-	}
-	return false;
-}
-
-function isWikiApp(com){
-  if (com == 'wiki'){
-    return true;
-  }
-  return false;
-}
