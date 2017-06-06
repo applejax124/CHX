@@ -6,16 +6,58 @@ chrome.omnibox.onInputEntered.addListener( function(text){
   parse(text);
 });
 
+// All functions for checking whether a command is valid and the function to 
+// execute if it is are stored in this array
+// USAGE:
+//  modules = [
+//    [
+//      function check(),
+//      function exec()
+//    ]
+//  ]
+var modules = [];
 
-//function to parse commands
-//INPUT:
-//    str - raw text of the command
-//OUTPUT: 
-//  NONE - commands are executed in their own way
+// function for adding a module to the modules function
+// this wrapper should reduce the overhead of including functions from different scripts
+function addModule(check,exec){
+  modules.push([check,exec]);
+}
+
+
+// Function to parse commands
+// Indexed through each module, call checker, and if it returns true call its exec function
+// INPUT:
+//   str - raw text of the command
+// OUTPUT: 
+//   NONE - commands are executed in their own way
 function parse( str ){
   args = str.split(" ");
-  //Command always comes first
+  // Command always comes first
   com = args.shift();
+
+  // Start iterating through module checkers
+  // First module to return true is executed, which means any keyword used for
+  //  only one module is reserved
+  for(i in modules){
+    if(modules[i][0](com)){
+      modules[i][1](args);
+      return;
+    }
+  }
+  // Final fail case to execute if no commands check out
+  alert("ERROR. Command not found.");
+}
+
+function check_test(){
+  return true;
+}
+
+function test(){
+  alert("Command Executing");
+}
+
+addModule(isGoogleCommand, google_search);
+/*
   if ( isGoogleCommand(com) ){
     google_search(args);
   } else if (isYoutubeCommand(com)) {
@@ -43,8 +85,7 @@ function parse( str ){
   } else {
     alert("ERROR: command not found");
   }
-
-}
+*/
 
 //function that handles bookmark-related commands
 //just reads command details and calls the next operation
