@@ -57,17 +57,15 @@ function test(){
 }
 
 addModule(isGoogleCommand, google_search);
+addModule(isYoutubeCommand, youtube_search);
+
+addModule(isSettingsPage, settings_load);
+addModule(isExtensionsPage, extensions_load);
+
+//addModule(isDriveApp,);
+//addModule(isMailApp,);
+addModule(isWikiApp, wikipedia_search);
 /*
-  if ( isGoogleCommand(com) ){
-    google_search(args);
-  } else if (isYoutubeCommand(com)) {
-    youtube_search(args);
-  } else if (isBookmarkUtility(com) ){
-    bookmark_utility(args);
-  } else if ( isSettingsPage(com) ){
-    settings_load();
-  } else if ( isExtensionsPage(com) ){
-    extensions_load();
   } else if( isDriveApp(com) ){
 		if ( args.length>0 ){
 			navigate( "https://drive.google.com/drive/u/"+args[0]+"/" );
@@ -80,10 +78,6 @@ addModule(isGoogleCommand, google_search);
 		}	else {
 			navigate( "https://mail.google.com/mail/u/0/" );
 		}
-	} else if( isWikiApp(com) ) {
-      wikipedia_search(args);
-  } else {
-    alert("ERROR: command not found");
   }
 */
 
@@ -223,15 +217,6 @@ function google_search( params ){
   url += '\b';
   navigate(url);
 }
-//function to access youtube search
-function youtube_search( params ){
-  url="https://www.youtube.com/results?search_query=";
-  for (i in params){
-    url += params[i]+"+";
-  }
-  url += '\b';
-  navigate(url);
-}
 
 //function for settings page access
 function settings_load(){
@@ -270,12 +255,6 @@ function isGoogleCommand(com){
   return false;
 }
 
-function isYoutubeCommand(com){
-  if (com == 'youtube'){
-    return true;
-  }
-  return false;
-}
 
 function isBookmarkUtility(com){
   if (com == 'bkmrk'){
