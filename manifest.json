@@ -16,7 +16,7 @@
 	"scripts": [
     "scripts/background.js", 
     "scripts/modules/mail/gmail.js",
-    "scripts/youtube.js",
+    "scripts/modules/youtube.js",
     "scripts/modules/drive.js",
     "scripts/modules/wikipedia.js",
     "scripts/modules/chrome/chrome_settings.js",
