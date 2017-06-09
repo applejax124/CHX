@@ -3,12 +3,10 @@
 * Douglas J. Smith
 * 06-05-2017
 */
-addModule(isDriveApp, launchDrive);
-
-// verifies drive command
-function isDriveApp(command){
-  return command==='drive';
-}
+addModule(launchDrive,
+[
+  "drive"
+]);
 
 // launches drive application
 function launchDrive(params){

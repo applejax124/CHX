@@ -4,12 +4,10 @@
 * 06-05-2017
 */
 
-addModule(isSettingsUtility, settings_load);
-
-// verifies settings pageload call
-function isSettingsUtility(){
-  return (com==='settings');
-}
+addModule(settings_load,
+[
+  "settings"
+]);
 
 // loads chrome settings page
 function settings_load(){

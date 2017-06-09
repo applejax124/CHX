@@ -4,12 +4,10 @@
 * 06 - 05 - 2017
 */
 
-addModule(isYouTubeCommand, youtube_search);
-
-// function to validate youtube detail
-function isYouTubeCommand( command ){
-  return (command==='youtube');
-}
+addModule(youtube_search,
+[
+  "youtube"
+]);
 
 // function to access youtube search
 function youtube_search( params ){

@@ -4,12 +4,10 @@
 * 06- 05 - 2017
 */
 
-addModule(isWikiApp, wikipedia_search);
-
-// determines whether wiki app has been called
-function isWikiApp(command){
-  return command==="wiki";
-}
+addModule(wikipedia_search,
+[
+  "wiki"
+]);
 
 // runs wikipedia search through navigation
 function wikipedia_search( params ){

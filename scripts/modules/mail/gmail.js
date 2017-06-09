@@ -3,12 +3,11 @@
 * Douglas J. Smith
 * 06-06-2017
 */
-addModule(isGmailApp, launchGmail);
+addModule(launchGmail,
+[
+  "gmail"
+]);
 
-// verifies Gmail
-function isGmailApp(command){
-  return command==='gmail';
-}
 // launches gmail
 function launchGmail(params){
   if ( params.length>0 ){

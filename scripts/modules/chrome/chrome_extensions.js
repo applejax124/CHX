@@ -4,12 +4,11 @@
 * 06-05-2017
 */
 
-addModule(isExtensionsUtility, extensions_load);
-
-// verifies extensions command
-function isExtensionsUtility(command){
-  return command==='extensions';
-}
+// Attach module
+addModule(extensions_load,
+[
+  "extensions"
+]);
 
 // opens chrome extensions page
 function extensions_load(){

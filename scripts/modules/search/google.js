@@ -4,12 +4,10 @@
 * 06 - 05 - 2017
 */
 
-addModule(isGoogleCommand, google_search);
-
-// verifies google search command
-function isGoogleCommand(command){
-  return command==='google';
-}
+addModule(google_search,
+[
+"google"
+]);
 
 // google search
 function google_search( params ){
