@@ -13,19 +13,18 @@ chrome.omnibox.onInputEntered.addListener( function(text){
 //    string key : function()
 //  }
 
-var modules = {
-  "test":alert
-};
+var modules = {};
 
 // Function for adding modules by mapping a function to a list of keys
 //  Inputs:
 //    @exec() - a function that will be executed to run the module
 //    @checks[] - a list of keys that the function protoype will be stored in
 function addModule(exec, checks){
-  for(var a; a<checks.length; ++a){
+  for(var a=0; a<checks.length; ++a){
     modules[checks[a]] = exec;
   }
 }
+
 
 // Function to parse commands
 // Indexed through each module, call checker, and if it returns true call its exec function
