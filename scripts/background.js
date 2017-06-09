@@ -7,22 +7,25 @@ chrome.omnibox.onInputEntered.addListener( function(text){
 });
 
 // All functions for checking whether a command is valid and the function to 
-// execute if it is are stored in this array
+// execute if it is are stored in this object
 // USAGE:
-//  modules = [
-//    [
-//      function check(),
-//      function exec()
-//    ]
-//  ]
-var modules = [];
+//  modules = {
+//    string key : function()
+//  }
 
-// function for adding a module to the modules function
-// this wrapper should reduce the overhead of including functions from different scripts
-function addModule(check,exec){
-  modules.push([check,exec]);
+var modules = {
+  "test":alert
+};
+
+// Function for adding modules by mapping a function to a list of keys
+//  Inputs:
+//    @exec() - a function that will be executed to run the module
+//    @checks[] - a list of keys that the function protoype will be stored in
+function addModule(exec, checks){
+  for(var a; a<checks.length; ++a){
+    modules[checks[a]] = exec;
+  }
 }
-
 
 // Function to parse commands
 // Indexed through each module, call checker, and if it returns true call its exec function
@@ -31,23 +34,20 @@ function addModule(check,exec){
 // OUTPUT: 
 //   NONE - commands are executed in their own way
 function parse( str ){
+  // Stores function indexed to command
+  var func;
   args = str.split(" ");
   // Command always comes first
   com = args.shift();
-
-  // Start iterating through module checkers
-  // First module to return true is executed, which means any keyword used for
-  //  only one module is reserved
-  for(i in modules){
-    if(modules[i][0](com)){
-      modules[i][1](args);
-      return;
-    }
+  // Access the function keyed to this command
+  func = modules[com];
+  // If a function wasn't accessed, then call the fail state
+  if(func===undefined){
+    alert("ERROR. Command not found.");
+  } else {
+    func(args);
   }
-  // Final fail case to execute if no commands check out
-  alert("ERROR. Command not found.");
 }
-
 
 // UTILITY FUNCTIONS //////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
