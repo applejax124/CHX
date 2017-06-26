@@ -11,9 +11,5 @@ addModule(launchCalendar,
 
 // navigates to google calendar webapp
 function launchCalendar(params){
-  if ( params.length>0 ){
-    navigate("https://calendar.google.com/calendar/b/"+args[0]+"/");
-  } else {
-    navigate("https://calendar.google.com/calendar/b/0/");
-  }
+  navigateGoogleWebapp("https:calendar.google.com/calendar/b/",params)
 }

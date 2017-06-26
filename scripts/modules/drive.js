@@ -10,9 +10,5 @@ addModule(launchDrive,
 
 // launches drive application
 function launchDrive(params){
-  if ( params.length>0 ){
-    navigate( "https://drive.google.com/drive/u/"+args[0]+"/" );
-  } else {
-    navigate( "https://drive.google.com/drive/u/0/" );
-  }
+  navigate("https://drive.google.com",params);
 }

@@ -10,9 +10,5 @@ addModule(launchInbox,
 
 // launches inbox
 function launchInbox(params){
-  if (params.length>0){
-    navigate("https://inbox.google.com/u/"+args[0]+"/");
-  } else {
-    navigate("https://inbox.google.com/u/0/");
-  }
+  navigate("https://inbox.google.com",params);
 }
