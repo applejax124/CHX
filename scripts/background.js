@@ -57,6 +57,16 @@ function navigate( loc ){
   chrome.tabs.update({"url":loc});
 }
 
+// Function for navigating to one of google's webapps. Takes a specified webapp
+// url and another parameter string, which needs to be checked for nonexistence.
+function navigateGoogleWebapp(targetUrl, params){
+  if (params.length>0) {
+    navigate(targetUrl+params[0]+"/");
+  } else {
+    navigate(targetUrl+"0/");
+  }
+}
+
 
 
 
