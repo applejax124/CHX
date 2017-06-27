@@ -5,7 +5,8 @@
 */
 addModule(launchGmail,
 [
-  "gmail"
+  "gmail",
+  "mail"
 ]);
 
 // launches gmail
