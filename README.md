@@ -4,6 +4,7 @@ CHX is a chrome extension that will enable simple regex-like commands to be used
 
 ## Contents
 + [Installation](#Installation)
++ [Usage](#Usage)
 
 ### Installation
 
@@ -24,3 +25,11 @@ It should be fairly self explanatory or well-documented.
 4. Click "Load Unpacked Extension" to build CHX as an add-on.
 
 
+### Usage
+
+CHX commands are written in the omnibox (address bar).
+In order to be processed they must be preceeded by a command character `;`
+
+Structure of a typical CHX command:
+
+`; <command> [arguments]`
