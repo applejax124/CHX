@@ -20,6 +20,7 @@
     "scripts/modules/youtube.js",
     "scripts/modules/bookmarks.js",
     "scripts/modules/drive.js",
+    "scripts/modules/keep.js",
     "scripts/modules/calendar.js",
     "scripts/modules/wikipedia.js",
     "scripts/modules/chrome/chrome_settings.js",
