@@ -25,7 +25,8 @@
     "scripts/modules/wikipedia.js",
     "scripts/modules/chrome/chrome_settings.js",
     "scripts/modules/chrome/chrome_extensions.js",
-    "scripts/modules/search/google.js"
+    "scripts/modules/search/google.js",
+    "scripts/modules/search/duckduckgo.js"
   ]
 },
 
