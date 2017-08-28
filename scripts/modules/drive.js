@@ -10,5 +10,5 @@ addModule(launchDrive,
 
 // launches drive application
 function launchDrive(params){
-  navigate("https://drive.google.com",params);
+  navigateGoogleWebapp("https://drive.google.com/u/",params);
 }
