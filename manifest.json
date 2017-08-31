@@ -21,6 +21,7 @@
     "scripts/modules/bookmarks.js",
     "scripts/modules/drive.js",
     "scripts/modules/keep.js",
+    "scripts/modules/maps.js",
     "scripts/modules/calendar.js",
     "scripts/modules/wikipedia.js",
     "scripts/modules/chrome/chrome_settings.js",
