@@ -9,7 +9,5 @@ addModule(keepUtility,
 ]);
 // Handles commands associated with Google Keep.
 function keepUtility(params){
-  if(params<1){
-    navigate("https://keep.google.com",[]);
-  }
+  navigateGoogleWebapp("https://keep.google.com/u/",params);
 }
