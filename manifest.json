@@ -14,20 +14,20 @@
 "background": {
   "persistent":false,
 	"scripts": [
-    "scripts/background.js", 
-    "scripts/modules/mail/gmail.js",
-    "scripts/modules/mail/inbox.js",
-    "scripts/modules/youtube.js",
     "scripts/modules/bookmarks.js",
-    "scripts/modules/drive.js",
-    "scripts/modules/keep.js",
-    "scripts/modules/maps.js",
-    "scripts/modules/calendar.js",
     "scripts/modules/wikipedia.js",
-    "scripts/modules/chrome/chrome_settings.js",
-    "scripts/modules/chrome/chrome_extensions.js",
     "scripts/modules/search/google.js",
-    "scripts/modules/search/duckduckgo.js"
+    "scripts/modules/search/duckduckgo.js",
+    "scripts/modules/google-webapps/mail/gmail.js",
+    "scripts/modules/google-webapps/mail/inbox.js",
+    "scripts/modules/google-webapps/youtube.js",
+    "scripts/modules/google-webapps/drive.js",
+    "scripts/modules/google-webapps/keep.js",
+    "scripts/modules/google-webapps/maps.js",
+    "scripts/modules/google-webapps/calendar.js",
+    "scripts/modules/google-webapps/chrome/chrome_settings.js",
+    "scripts/modules/google-webapps/chrome/chrome_extensions.js",
+    "scripts/background.js"
   ]
 },
 
