@@ -14,6 +14,7 @@
 "background": {
   "persistent":false,
 	"scripts": [
+    "scripts/background.js",
     "scripts/modules/bookmarks.js",
     "scripts/modules/wikipedia.js",
     "scripts/modules/search/google.js",
@@ -26,8 +27,7 @@
     "scripts/modules/google-webapps/maps.js",
     "scripts/modules/google-webapps/calendar.js",
     "scripts/modules/google-webapps/chrome/chrome_settings.js",
-    "scripts/modules/google-webapps/chrome/chrome_extensions.js",
-    "scripts/background.js"
+    "scripts/modules/google-webapps/chrome/chrome_extensions.js"
   ]
 },
 
