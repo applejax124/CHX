@@ -1,6 +1,8 @@
-//Ecosia Search Utility
-//Cami Carballo
-//24 October 2017
+/*
+* Ecosia Search Utility
+* Cami Carballo
+* 10 - 24 -2017
+*/
 
 addModule(ecosia_search, 
 [
@@ -10,14 +12,10 @@ addModule(ecosia_search,
 
 //ecosia search
 function ecosia_search( params ){
-
   url = "https://www.ecosia.org/search?q=";
-  
   for (i in params){
     url += params[i] + "+";
   }
-
   url += '\b';
   navigate(url);
-
 }
