@@ -2,15 +2,19 @@
 //Cami Carballo
 //24 October 2017
 
-addModule(ecosia_search, "ecosia");
+addModule(ecosia_search, 
+[
+"ecosia",
+"eco"
+]);
 
 //ecosia search
-function ecosia_search(params){
+function ecosia_search( params ){
 
-  url = "https://ecosia.org/search?q="
+  url = "https://www.ecosia.org/search?q=";
   
   for (i in params){
-    url += params[i] + "+"
+    url += params[i] + "+";
   }
 
   url += '\b';
