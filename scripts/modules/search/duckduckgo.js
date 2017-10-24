@@ -1,5 +1,5 @@
 /*
-* Google search utility
+* DuckDuckGo search utility
 * Douglas J. Smith
 * 06 - 05 - 2017
 */
@@ -10,7 +10,7 @@ addModule(duckduckgo_search,
 "ddg"
 ]);
 
-// google search
+// duckduckgo search
 function duckduckgo_search( params ){
   url="https://duckduckgo.com/?q=";
   for (i in params){

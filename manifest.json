@@ -10,7 +10,6 @@
   "16": "icons/icon.png"
 },
 
-
 "background": {
   "persistent":false,
 	"scripts": [
@@ -19,6 +18,7 @@
     "scripts/modules/wikipedia.js",
     "scripts/modules/search/google.js",
     "scripts/modules/search/duckduckgo.js",
+    "scripts/modules/search/ecosia.js",
     "scripts/modules/google-webapps/mail/gmail.js",
     "scripts/modules/google-webapps/mail/inbox.js",
     "scripts/modules/google-webapps/youtube.js",
@@ -30,7 +30,6 @@
     "scripts/modules/google-webapps/chrome/chrome_extensions.js"
   ]
 },
-
 
 "permissions":["tabs","bookmarks"]
 }

@@ -18,4 +18,7 @@ function bookmarksUtility(params){
   if(params.length < 1){
     navigate("chrome://bookmarks","");
   }
+//  else {
+//    navigate("chrome://bookmarks",params)
+//  }
 }
